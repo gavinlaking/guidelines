@@ -50,7 +50,7 @@ class ExampleClass
   end
 
   def limit_lines_to_eighty_characters
-    when_chanining_methods_that_run_longer_than_eighty_characters.
+    when_chaining_methods_that_run_longer_than_eighty_characters.
       indent_the_second_line
   end
 
