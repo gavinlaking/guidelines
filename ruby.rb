@@ -102,11 +102,15 @@ class ExampleClass
   end
 
   def use_curly_bracket_syntax_where_we_care_about_the_return_value
-    new_things = things.map { |thing| thing.new? }
+    changed_things = things.map { |thing| thing.change_with(argument) }
   end
 
   def or_where_the_block_fits_on_a_single_line
-    things.each { |thing| thing.stuff! }
+    things.each { |thing| thing.stuff_with!(argument) }
+  end
+
+  def use_symbol_to_proc_syntax_for_methods_without_args
+    new_things = things.map(&:new?)
   end
 
   def use_do_end_syntax_where_the_block_does_not_fit_on_a_single_line
