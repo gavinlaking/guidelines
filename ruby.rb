@@ -138,7 +138,7 @@ class ExampleClass
     hash.fetch(:one)
   end
 
-  def only_set_a_default_where_approproate
+  def only_set_a_default_where_appropriate
     hash.fetch(:one, 1)
   end
 
@@ -150,7 +150,7 @@ class ExampleClass
     [1, 2, 3]
   end
 
-  def split_many_value_over_multiple_lines_with_a_trailing_comma
+  def split_many_values_over_multiple_lines_with_a_trailing_comma
     [
       one,
       two,
@@ -176,7 +176,7 @@ class ExampleClass
     'use single quotes where escaping or interpolation is not required'
   end
 
-  def with_interpoloation
+  def with_interpolation
     "use double quotes - #{no_spaces_inside_interpolation}"
   end
 
@@ -184,7 +184,7 @@ class ExampleClass
     %q{avoid "escaping", always use curly brackets}
   end
 
-  def with_quotes_and_interpoloation
+  def with_quotes_and_interpolation
     %{avoid "escaping" and #{interpolate} with curly brackets}
   end
 
@@ -194,7 +194,7 @@ class ExampleClass
     end
   end
 
-  def do_not_use_and_for_condtional_logic_use(this: '&&')
+  def do_not_use_and_for_conditional_logic_use(this: '&&')
     this? && that?
   end
 
@@ -202,7 +202,7 @@ class ExampleClass
     do_something and return
   end
 
-  def do_not_use_or_for_condtional_logic_use(this: '||')
+  def do_not_use_or_for_conditional_logic_use(this: '||')
     this || that
   end
 
