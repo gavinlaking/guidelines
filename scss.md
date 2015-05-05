@@ -41,10 +41,10 @@ e.g:
 
 Same rules as regular CSS, with a few extensions:
 
-* When using nested selectors, go a maximum of 3 levels deep, any more and you should consider restructuring your HTML or CSS selectors
 * If using variables, define them at the top of the file, or if used in more than one file, define them in `app/assets/stylesheets/application/settings.scss`
 * If you are using the same patterns in lots of places (e.g. a clearfix) move it into the helpers folder as a new component `app/assets/stylesheets/application/helpers/`
 * If you need to modify a colour, you should use the SASS colour modification functions, using an existing colour as your base. [http://sass-lang.com/documentation/Sass/Script/Functions.html](Module: Sass::Script::Functions)
+* When using nested selectors (which should be avoided, see BEM below), go a maximum of 3 levels deep, any more and you should consider restructuring your HTML or CSS selectors
 
 ## Everything should be a component
 
@@ -68,13 +68,11 @@ For components, we use a BEM-like (Block Element Modifier) naming convention. [C
 `.component__element` represents a descendent of `.component` that helps form `.component` as a whole.
 `.component--modifier` represents a different state or version of `.component`.
 
-Using the `&` feature in SASS, we can write cleaner and leaner CSS adhering to the BEM convention.
+The `&` feature in SASS makes it easier for us to write BEM adhering CSS.
 
 e.g:
 
-    $component-name: 'deal-pod';
-
-    .#{$component-name} {
+    .deal-pod {
       float: left;
       display: block;
       padding: 1em;
@@ -89,9 +87,35 @@ e.g:
       &--large {
         padding: 2em;
 
-        .#{$component-name}__title {
+        .deal-pod__title {
           font-size: 2.4em;
         }
+      }
+    }
+
+Whilst the use of BEM promotes clean, readable and performance optimised CSS, it's still possible to fall into the same rabbit hole as old-school CSS/SMACSS, namely nested/ugly selectors. To that end, you should aim for more simplistic and granular element components, thinking of component descendents as sole entities as opposed to descendents following a hierachical structure.
+
+Instead of writing the following:
+
+    .deal-pod {
+      &__body {
+        display: block;
+
+        &__title {
+          display: inline-block;
+        }
+      }
+    }
+
+We could write:
+
+    .deal-pod {
+      &__body {
+        display: block;
+      }
+
+      &__title {
+        display: inline-block;
       }
     }
 
