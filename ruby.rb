@@ -239,6 +239,10 @@ class ExampleClass
     anything_that_absolutely_has_to_happen
   end
 
+  def prefer_methods_for_magic_values
+    AS_CONSTANTS = 'can be mutated'
+  end
+
   protected
 
   def protected_keyword_and_protected_methods
