@@ -7,7 +7,7 @@ class ExampleClass
   class ThenAnyErrorClass < StandardError;end
 
   attr_reader :stuff, :things
-  protected :stuff, :things
+  private :stuff, :things
 
   def initialize(stuff, things)
     @stuff, @things = stuff, things
