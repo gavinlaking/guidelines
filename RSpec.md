@@ -142,6 +142,20 @@ before(:each) { @order = instance_double('Order') }
 let(:order) { instance_double('Order') }
 ```
 
+* Place contexts at the bottom of the `describe` block, with the happy path at
+  the top. This allows the core behaviour to be more visible to people reading
+  the spec for the first time.
+
+```ruby
+describe 'testing the thing' do
+  it 'tests the thing'
+
+  context 'when an edge case ocurrs' do
+    it 'handles it gracefully'
+  end
+end
+```
+
 ## Controllers
 
 * Mock the models and stub their methods. Testing the controller should not
