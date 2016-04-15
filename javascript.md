@@ -42,3 +42,7 @@ this.$(".element")
 ## Preference for new files
 
 In general all new JavaScript written for our apps should be written using the BackboneJS (http://backbonejs.org/) library/structure of models, views and collections.
+
+## Tests
+
+All new models and collections should have an associated Jasmine test.  For more information speak to a Front-End Dev.
