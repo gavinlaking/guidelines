@@ -4,7 +4,7 @@ class ExampleClass
   extend First
   include Second
 
-  class ThenAnyErrorClass < StandardError;end
+  ThenAnyErrorClass = Class.new(StandardError)
 
   attr_reader :stuff, :things
   private :stuff, :things
