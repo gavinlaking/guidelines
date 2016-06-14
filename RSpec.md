@@ -57,6 +57,26 @@ describe OrdersController do
 end
 ```
 
+* When using a `subject`, use it directly after the `describe` block.
+
+```ruby
+# bad
+describe '#some_method' do
+  let(:something) { double }
+
+  subject { instance.some_method(something) }
+
+  # ...
+
+# good
+describe '#some_method' do
+  subject { instance.some_method(something) }
+
+  let(:something) { double }
+
+  # ...
+```
+
 * Keep the full spec name (concatenation of the nested description)
   grammatically correct.
 
