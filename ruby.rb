@@ -259,4 +259,8 @@ class ExampleClass
     if_it_can_be_private(make_it_private)
   end
 
+  def fully_namespace_classes_to_prevent_confusion
+    SomeModule::OtherClassOrModule::MyClass
+  end
+
 end
