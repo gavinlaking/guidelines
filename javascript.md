@@ -175,6 +175,38 @@ function adultAges() {
 console.log(adultAges()); // <- undefined
 ```
 
+*The right way:*
+
+```js
+function adultAges() {
+  return {
+    type: "year",
+    values: ["18+", 17, 16]
+  };
+}
+
+console.log(adultAges()); // { type: "year", values: ["18+", 17, 16] }
+```
+
+Conditions should not be written to fit onto one line, they are much clearer written as a block in the style illustrated above.
+
+*The wrong way:*
+
+```js
+if (cheapest) { el.classList.add(".flight-result--cheapest"); }
+```
+
+*The right way:*
+
+```js
+if (cheapest) {
+  el.classList.add(".flight-result--cheapest");
+}
+```
+
+Some conditions can be expressed using a ternary operator,
+for guidance on whether or not you can use one in your situation please refer to the [section on Ternary operators](#ternary-operators) in this guide.
+
 ### Var statement
 
 Always declare variables with the `var` keyword, as reluctance to do so can lead to variables accidentaly polluting the global scope.
