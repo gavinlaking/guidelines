@@ -1,10 +1,6 @@
 
 # Coding standards for ERB / HTML
 
-## Filenames
-
-Filenames should be named in snake_case to match the structure and naming conventions found in Rails.
-
 ## Indentation
 
 Indent all erb & HTML with two spaces:
