@@ -1,6 +1,10 @@
-# Coding standards for (S)CSS
+# Coding standards for [Sass](http://sass-lang.com)
 
-Welcome to our coding standards for writing (S)CSS.
+Welcome to our coding standards for writing Sass and CSS.
+
+We prefer the `.scss` style of Sass, which is a superset of CSS3, allowing 
+backwards compatability with plain CSS files, meaning any valid CSS file is
+valid SCSS as well.
 
 ## Coding style
 
@@ -37,7 +41,7 @@ e.g:
     }
 
 
-## SCSS Specifics
+## Sass Specifics
 
 Same rules as regular CSS, with a few extensions:
 
