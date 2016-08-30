@@ -57,7 +57,8 @@ describe OrdersController do
 end
 ```
 
-* When using a `subject`, use it directly after the `describe` block.
+* When using a `subject`, use it directly after the `describe` block,
+and named where possible:
 
 ```ruby
 # bad
@@ -70,7 +71,7 @@ describe '#some_method' do
 
 # good
 describe '#some_method' do
-  subject { instance.some_method(something) }
+  subject(:some_method) { instance.some_method(something) }
 
   let(:something) { double }
 
@@ -84,17 +85,29 @@ describe '#some_method' do
     * Second level: use `describe` with a method name: `describe '#awesome?'`
     * Inner blocks: use a `context` that starts with `when`: `context 'when user
       is unsubscribed`
-    * Example describes the expectation: `it 'is false'`
+    * Example describes the expectation: `it { is_expected.to be_false }`
     * Full spec name: `'User#awesome? when user is unsubscribed is false'`
 
-* Do not use “should” in our example names.
+* Do not use “should” in our example names:
 
 ```ruby
 # bad
-it 'should return true'
+it 'should return the result of a computation'
 
 # good
-it 'returns true'
+it 'returns the result of a computation'
+```
+
+* Do not use a description when the test returns true or false.
+
+```ruby
+# bad
+it 'returns true' do
+  expect(named_subject).to be_true
+end
+
+# good
+it { is_expected.to be_true }
 ```
 
 * Write expectations at a high level, removed from logic and implementation
