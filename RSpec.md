@@ -85,7 +85,7 @@ describe '#some_method' do
     * Second level: use `describe` with a method name: `describe '#awesome?'`
     * Inner blocks: use a `context` that starts with `when`: `context 'when user
       is unsubscribed`
-    * Example describes the expectation: `it { is_expected.to be_false }`
+    * Example describes the expectation: `it { is_expected.to be_unsubscribed }`
     * Full spec name: `'User#awesome? when user is unsubscribed is false'`
 
 * Do not use “should” in our example names:
@@ -108,6 +108,12 @@ end
 
 # good
 it { is_expected.to be_true }
+```
+
+* Use RSpec magic matchers when possible to improve test readability:
+
+```ruby
+it { is_expected.to be_completed }
 ```
 
 * Write expectations at a high level, removed from logic and implementation
