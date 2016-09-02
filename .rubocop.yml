@@ -1,0 +1,10 @@
+# OTB Custom Rubocop configuration
+
+# Do not require documentation at the top of each source file.
+Style/Documentation:
+  Enabled: false
+
+# Multi-line method chaining should be done with trailing dots.
+Style/DotPosition:
+  EnforcedStyle: trailing
+
