@@ -153,6 +153,7 @@ MyNumber.prototype.squared = function () {
 Strings should be kept as brief as possible and should line wrap after 80 characters. Where possible use translations provided through `I18n` instead of hard-coding text as a string to allow globalisation.
 
 We prefer the use of single quotes `'` over double quotes `"` around strings unless there is good reason.
+For example, if the string contains single quotes it would be ok to use double quotes `"` to avoid having to escape the quotes inside the string.
 
 Never use `eval()` on a string, as it opens too many vulnerabilities. This includes eval's cousins who will remain nameless, if you're passing a string representation of a function into another function, stop look and listen.
 
