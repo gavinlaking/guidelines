@@ -33,7 +33,7 @@ All Backbone models and collections should be covered with an associated [Jasmin
 
 #### Indentation
 
-For indentation, use spaces instead of tabs with a 2 space indent. 
+For indentation, use spaces instead of tabs with a 2 space indent.
 
 *The right way:*
 
@@ -65,7 +65,7 @@ UNIX-style newlines (`\n`) should be used at the end of all lines, with a newlin
 
 ```js
 var Flight = (function (Backbone) {
-  "use strict";
+  'use strict';
 
   return Backbone.Model.extend({
     // ...
@@ -77,7 +77,7 @@ var Flight = (function (Backbone) {
 
 ```js
 var Flight = (function (Backbone) {
-  "use strict";
+  'use strict';
 
   return Backbone.Model.extend({
     // ...
@@ -87,7 +87,7 @@ var Flight = (function (Backbone) {
 
 ```js
 var Flight = (function (Backbone) {
-  "use strict";
+  'use strict';
 
   return Backbone.Model.extend({
     // ...
@@ -152,7 +152,8 @@ MyNumber.prototype.squared = function () {
 
 Strings should be kept as brief as possible and should line wrap after 80 characters. Where possible use translations provided through `I18n` instead of hard-coding text as a string to allow globalisation.
 
-We prefer the use of double quotes `"` over single quotes `'` around strings unless there is good reason.
+We prefer the use of single quotes `'` over double quotes `"` around strings unless there is good reason.
+For example, if the string contains single quotes it would be ok to use double quotes `"` to avoid having to escape the quotes inside the string.
 
 Never use `eval()` on a string, as it opens too many vulnerabilities. This includes eval's cousins who will remain nameless, if you're passing a string representation of a function into another function, stop look and listen.
 
@@ -167,8 +168,8 @@ Due to implicit semicolon insertion, brackets should be in written [K&R style](h
 function adultAges() {
   return // <- function will exit at this line
   {
-    type: "year",
-    values: ["18+", 17, 16]
+    type: 'year',
+    values: ['18+', 17, 16]
   };
 }
 
@@ -180,12 +181,12 @@ console.log(adultAges()); // <- undefined
 ```js
 function adultAges() {
   return {
-    type: "year",
-    values: ["18+", 17, 16]
+    type: 'year',
+    values: ['18+', 17, 16]
   };
 }
 
-console.log(adultAges()); // { type: "year", values: ["18+", 17, 16] }
+console.log(adultAges()); // { type: 'year', values: ['18+', 17, 16] }
 ```
 
 Conditions should not be written to fit onto one line, they are much clearer written as a block in the style illustrated above.
@@ -193,14 +194,14 @@ Conditions should not be written to fit onto one line, they are much clearer wri
 *The wrong way:*
 
 ```js
-if (cheapest) { el.classList.add(".flight-result--cheapest"); }
+if (cheapest) { el.classList.add('.flight-result--cheapest'); }
 ```
 
 *The right way:*
 
 ```js
 if (cheapest) {
-  el.classList.add(".flight-result--cheapest");
+  el.classList.add('.flight-result--cheapest');
 }
 ```
 
