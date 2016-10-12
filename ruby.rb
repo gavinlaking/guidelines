@@ -9,6 +9,11 @@ class ExampleClass
   attr_reader :stuff, :things
   private :stuff, :things
 
+  def_delegators :destination,
+    :followed_by,
+    :in_alphabetical_order,
+    :methods_to_be_delegated
+
   def initialize(stuff, things)
     @stuff, @things = stuff, things
   end
